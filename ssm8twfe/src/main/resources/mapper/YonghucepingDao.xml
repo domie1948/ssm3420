@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YonghucepingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YonghucepingEntity" id="yonghucepingMap">
+        <result property="cepingmingcheng" column="cepingmingcheng"/>
+        <result property="cepingleixing" column="cepingleixing"/>
+        <result property="timuyi" column="timuyi"/>
+        <result property="xuanxiangyi" column="xuanxiangyi"/>
+        <result property="timuer" column="timuer"/>
+        <result property="xuanxianger" column="xuanxianger"/>
+        <result property="timusan" column="timusan"/>
+        <result property="xuanxiangsan" column="xuanxiangsan"/>
+        <result property="timusi" column="timusi"/>
+        <result property="xuanxiangsi" column="xuanxiangsi"/>
+        <result property="timuwu" column="timuwu"/>
+        <result property="xuanxiangwu" column="xuanxiangwu"/>
+        <result property="timuliu" column="timuliu"/>
+        <result property="xuanxiangliu" column="xuanxiangliu"/>
+        <result property="tijiaoshijian" column="tijiaoshijian"/>
+        <result property="xingming" column="xingming"/>
+        <result property="zhanghao" column="zhanghao"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YonghucepingVO" >
+		SELECT * FROM yonghuceping  yonghuceping         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YonghucepingVO" >
+		SELECT  yonghuceping.* FROM yonghuceping  yonghuceping
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YonghucepingView" >
+
+		SELECT  yonghuceping.* FROM yonghuceping  yonghuceping 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YonghucepingView" >
+		SELECT * FROM yonghuceping  yonghuceping <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
